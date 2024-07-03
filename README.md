@@ -6,19 +6,15 @@ Documentation of the project (UML etc.)
 ```mermaid
 classDiagram
     User "0..*" <|-- "1..1" Forum
-
     User "1..1" --|> "0..*" Post
-
     User "1..1" --|> "0..*" Reply
-
     User  <|--  Admin
-
     Reply "0..*" -- "1..1" Post
 
     User : +userId long
     User : +userName String
     User : +email String
-    User : +passwd hash
+    User : +passwd String
     User : +numberPostUser int
     User : +userDateCreated userDateCreated
     User : +userDeleted boolean
@@ -39,11 +35,11 @@ classDiagram
       +userId long
       +title String
       +postContent String
-      +postDataCreated date
+      +postDateCreated date
       +postDeleted boolean
       +postCreate()
-      +postEdit
-      +postDelete
+      +postEdit()
+      +postDelete()
     }
 
     class Admin{
@@ -62,8 +58,6 @@ classDiagram
       +replyCreate()
       +replyEdit()
       +replyDelete()
-
-      +run()
     }
 ```
 
